@@ -4,35 +4,27 @@ import "fmt"
 
 func main() {
 
-	// strings
-	var nameOne string = "Omar"
-	var nameTwo = "Yasser"
-	var nameThree string
+	// var ages [3]int = [3]int{10, 20, 30}
+	var ages = [3]int{10, 20, 30}
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	names := [3]string{"Omar", "Yasser", "Mario"}
+	names[1] = "Luigi"
 
-	nameOne = "Peach"
-	nameThree = "Kiwi"
+	fmt.Println(ages, len(ages), cap(ages))
+	fmt.Println(names, len(names), cap(names))
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// slices
+	var slice1 []int = ages[:]
+	var slice2 []int = ages[1:]
+	var slice3 []int = ages[:2]
+	var slice4 []int = ages[1:2]
 
-	nameFour := "Pineapple"
-	fmt.Println(nameFour)
+	fmt.Println(slice1, len(slice1), cap(slice1))
+	fmt.Println(slice2, len(slice2), cap(slice2))
+	fmt.Println(slice3, len(slice3), cap(slice3))
+	fmt.Println(slice4, len(slice4), cap(slice4))
 
-	// integers
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	var numOne int8 = 25
-	var numTwo int8 = -128
-	var numThree uint8 = 255
-
-	var scoreOne float32 = 25.98
-	var scoreTwo float64 = 2332352267989608.75445
-	scoreThree := 1.5
+	slice4 = append(slice4, 85)
+	fmt.Println(slice4, len(slice4), cap(slice4))
 
 }
