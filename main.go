@@ -1,30 +1,36 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func main() {
 
-	// var ages [3]int = [3]int{10, 20, 30}
-	var ages = [3]int{10, 20, 30}
+	greeting := "hello there friends"
 
-	names := [3]string{"Omar", "Yasser", "Mario"}
-	names[1] = "Luigi"
+	fmt.Println(strings.Contains(greeting, "hello!"))
+	fmt.Println(strings.ReplaceAll(greeting, "hello", "hi"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "th"))
+	fmt.Println(strings.Split(greeting, " "))
 
-	fmt.Println(ages, len(ages), cap(ages))
-	fmt.Println(names, len(names), cap(names))
+	// the original string is not modified
+	fmt.Println(greeting)
 
-	// slices
-	var slice1 []int = ages[:]
-	var slice2 []int = ages[1:]
-	var slice3 []int = ages[:2]
-	var slice4 []int = ages[1:2]
+	ages := []int{45, 23, 12, 34, 56, 78, 90}
 
-	fmt.Println(slice1, len(slice1), cap(slice1))
-	fmt.Println(slice2, len(slice2), cap(slice2))
-	fmt.Println(slice3, len(slice3), cap(slice3))
-	fmt.Println(slice4, len(slice4), cap(slice4))
+	sort.Ints(ages)
+	fmt.Println(ages)
 
-	slice4 = append(slice4, 85)
-	fmt.Println(slice4, len(slice4), cap(slice4))
+	index := sort.SearchInts(ages, 101)
+	fmt.Println(index)
+
+	names := []string{"john", "jane", "joe", "jim", "jill"}
+	sort.Strings(names)
+	fmt.Println(names)
+
+	fmt.Println(sort.SearchStrings(names, "jane"))
 
 }
