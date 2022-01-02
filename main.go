@@ -1,43 +1,38 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+func sayGreeting(n string) {
+	println("Greetings!", n)
+}
+
+func sayBye(n string) {
+	println("Bye!", n)
+}
+
+func cycleNames(n []string, f func(string)) {
+	for _, name := range n {
+		f(name)
+	}
+
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
 
 func main() {
 
-	age := 18
+	sayGreeting("World")
+	sayBye("World")
 
-	if age >= 18 {
-		println("You are old enough to vote!")
-		println("Have you registered to vote yet?")
-	} else {
-		println("Sorry, you are too young to vote.")
-		println("Please register to vote as soon as you turn 18!")
-	}
+	cycleNames([]string{"World", "Gopher"}, sayGreeting)
 
-	number := 25
-
-	if number < 30 {
-		println("Number is less than 30")
-	} else if number < 40 {
-		println("Number is less than 40")
-	} else {
-		println("Number is greater than 40")
-	}
-
-	names := []string{"Bob", "Bill", "Joe", "Jim"}
-
-	for i, name := range names {
-		if i == 1 {
-			println("continuing at pos", i)
-			continue
-		}
-
-		if i > 2 {
-			println("breaking at pos", i)
-			break
-		}
-
-		fmt.Printf("the value at %d is %s\n", i, name)
-	}
+	a := circleArea(5)
+	println(a)
+	fmt.Printf("%.3f\n", a)
 
 }
