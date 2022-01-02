@@ -4,34 +4,40 @@ import "fmt"
 
 func main() {
 
-	x := 0
+	age := 18
 
-	for x < 5 {
-		fmt.Println(x)
-		x++
+	if age >= 18 {
+		println("You are old enough to vote!")
+		println("Have you registered to vote yet?")
+	} else {
+		println("Sorry, you are too young to vote.")
+		println("Please register to vote as soon as you turn 18!")
 	}
 
-	for y := 0; y < 5; y++ {
-		fmt.Println(y)
+	number := 25
+
+	if number < 30 {
+		println("Number is less than 30")
+	} else if number < 40 {
+		println("Number is less than 40")
+	} else {
+		println("Number is greater than 40")
 	}
 
-	for {
-		fmt.Println("loop")
-		break
-	}
-
-	names := [4]string{"John", "Paul", "George", "Ringo"}
+	names := []string{"Bob", "Bill", "Joe", "Jim"}
 
 	for i, name := range names {
-		fmt.Println(i, name)
-	}
+		if i == 1 {
+			println("continuing at pos", i)
+			continue
+		}
 
-	for i := 0; i < len(names); i++ {
-		fmt.Println(names[i])
-	}
+		if i > 2 {
+			println("breaking at pos", i)
+			break
+		}
 
-	for _, name := range names {
-		fmt.Println(name)
+		fmt.Printf("the value at %d is %s\n", i, name)
 	}
 
 }
