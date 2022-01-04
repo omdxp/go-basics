@@ -1,0 +1,6 @@
+	Bill breakdown:
+Coffee:                   $12.00
+Cake:                     $4.50
+Too:                      $4.50
+	Tip:       $4.55
+	Total:     $25.55

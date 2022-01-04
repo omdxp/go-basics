@@ -65,7 +65,8 @@ func promptOptions(b *bill) {
 	fmt.Println("\t1. Add item")
 	fmt.Println("\t2. Update tip")
 	fmt.Println("\t3. Print bill")
-	fmt.Println("\t4. Exit")
+	fmt.Println("\t4. Save bill")
+	fmt.Println("\t5. Exit")
 
 	input := getInput("Enter your choice: ", reader)
 
@@ -80,6 +81,10 @@ func promptOptions(b *bill) {
 		fmt.Println(b.format())
 		promptOptions(b)
 	case "4":
+		fmt.Println("Saving bill...")
+		b.save(b.name)
+		promptOptions(b)
+	case "5":
 		fmt.Println("Exiting...")
 		os.Exit(0)
 	default:
